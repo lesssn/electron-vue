@@ -46,6 +46,7 @@ function appendSHALink (sha, destDirName) {
 }
 
 module.exports = {
+  // 脚本运行时的提示选项，会作为之后模板渲染时的用户自定义数据
   prompts: {
     name: {
       type: 'string',
@@ -61,8 +62,8 @@ module.exports = {
     plugins: {
       type: 'checkbox',
       message: 'Select which Vue plugins to install',
-      choices: ['axios', 'vue-electron', 'vue-router', 'vuex'],
-      default: ['axios', 'vue-electron', 'vue-router', 'vuex']
+      choices: ['axios', 'vue-electron', 'vue-router', 'vuex', 'electron-updater'],
+      default: ['axios', 'vue-electron', 'vue-router', 'vuex', 'electron-updater']
     },
     eslint: {
       type: 'confirm',
@@ -119,6 +120,7 @@ module.exports = {
       ]
     }
   },
+    // 自定义的 Handlebars 辅助函数
   helpers: {
     isEnabled (list, check, opts) {
       if (list[check]) return opts.fn(this)
@@ -148,6 +150,7 @@ module.exports = {
       }
     }
   },
+  // 根据prompts中的条件是否满足，决定是否要导入某些文件或者目录
   filters: {
     'src/renderer/routes.js': 'plugins[\'vue-router\']',
     'src/renderer/components/LandingPageView/CurrentPage.vue': 'plugins[\'vue-router\']',
@@ -162,7 +165,8 @@ module.exports = {
     'appveyor.yml': 'builder === \'builder\'',
     '.travis.yml': 'builder === \'builder\''
   },
-  complete (data) {
+  // 模板渲染完成后的回调函数
+  complete (data, helpers) {
     getCurrentSHA(data.author).then(sha => {
       let path = !data.inPlace ? data.destDirName : null
       if (path !== null) appendSHALink(sha, path)
@@ -181,5 +185,5 @@ module.exports = {
     }, () => {
       console.log('\x1b[33mwarning\x1b[0m Failed to append commit SHA on README.md')
     })
-  }
+  },
 }
