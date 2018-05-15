@@ -5,7 +5,7 @@
   "main": "meta.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SimulatedGREG/electron-vue.git"
+    "url": "git+https://github.com/lesssn/electron-vue.git"
   },
   "keywords": [
     "electron",
@@ -17,12 +17,12 @@
     "vuex",
     "resource"
   ],
-  "author": "Greg Holguin <simulatedgreg@gmail.com> (https://github.com/SimulatedGREG)",
+  "author": "lesssn <lesssn@outlook.com> (https://github.com/lesssn)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SimulatedGREG/electron-vue/issues"
+    "url": "https://github.com/lesssn/electron-vue/issues"
   },
-  "homepage": "https://github.com/SimulatedGREG/electron-vue#readme",
+  "homepage": "https://github.com/lesssn/electron-vue#readme",
   "devDependencies": {
     "suppose": "^0.6.1"
   }
