@@ -62,8 +62,8 @@ module.exports = {
     plugins: {
       type: 'checkbox',
       message: 'Select which Vue plugins to install',
-      choices: ['axios', 'vue-electron', 'vue-router', 'vuex'],
-      default: ['axios', 'vue-electron', 'vue-router', 'vuex']
+      choices: ['axios', 'vue-electron', 'vue-router', 'vuex', 'element-ui', 'electron-updater'],
+      default: ['axios', 'vue-electron', 'vue-router', 'vuex', 'element-ui', 'electron-updater']
     },
     eslint: {
       type: 'confirm',
@@ -132,7 +132,9 @@ module.exports = {
         'axios': '^0.16.1',
         'vue-electron': '^1.0.6',
         'vue-router': '^2.5.3',
-        'vuex': '^2.3.1'
+        'vuex': '^2.3.1',
+        'element-ui': '^2.3.2',
+        'electron-updater': "^2.21.4"
       }
 
       if (Object.keys(plugins).length > 0) output += ',\n'

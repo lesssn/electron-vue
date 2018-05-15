@@ -11,6 +11,13 @@ import router from './router'
 import store from './store'
 {{/isEnabled}}
 
+{{#isEnabled plugins 'element-ui'}}
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI);
+{{/isEnabled}}
+
 {{#isEnabled plugins 'vue-electron'}}
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 {{/isEnabled}}
