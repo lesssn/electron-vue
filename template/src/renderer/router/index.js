@@ -11,7 +11,6 @@ export default new Router({
         },
         {
             path: '/main',
-            name: 'main',
             component: require('@/components/main').default,
             children: [
                 {

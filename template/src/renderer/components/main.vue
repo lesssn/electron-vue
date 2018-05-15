@@ -8,8 +8,8 @@
                             <i class="el-icon-location"></i>
                             <span>菜单1</span>
                         </template>
-                        <el-menu-item index="/main/baidu">子菜单11</el-menu-item>
-                        <el-menu-item index="/main/dnsdun">子菜单12</el-menu-item>
+                        <el-menu-item index="/main">子菜单11</el-menu-item>
+                        <el-menu-item index="/main">子菜单12</el-menu-item>
                     </el-submenu>
                     <el-submenu index="2">
                         <template slot="title">
@@ -18,7 +18,7 @@
                         </template>
                         <el-submenu index="2-1">
                             <template slot="title">子菜单21</template>
-                            <el-menu-item index="/main/baidu">子菜单21</el-menu-item>
+                            <el-menu-item index="/main">子菜单21</el-menu-item>
                         </el-submenu>
                     </el-submenu>
 

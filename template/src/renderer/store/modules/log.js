@@ -1,5 +1,3 @@
-import request from '../request'
-
 const https = require('https');
 const http = require('http');
 const qs = require('querystring');
@@ -17,7 +15,6 @@ function nowTimeString() {
 }
 
 const state = {
-    // dnsdun 账号类型
     logging: '',
     eventCount: 0,          // 事件数量，用于显示通知
 };
