@@ -22,7 +22,8 @@ Vue.use(ElementUI);
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 {{/isEnabled}}
 {{#isEnabled plugins 'axios'}}
-Vue.http = Vue.prototype.$http = axios
+// 从主进程导入axios，避免在渲染进程中axios无法跨域以及无法设置cookie、user-agent等特殊字段
+Vue.http = Vue.prototype.$http = require('electron').remote.require('axios')
 {{/isEnabled}}
 Vue.config.productionTip = false
 
